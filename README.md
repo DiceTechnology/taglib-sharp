@@ -1,5 +1,10 @@
 # TagLib#
 
+## Dice Technology Fork
+This is a fork of the `mono/taglib-sharp` C# library. The purpose is to add a CLI executable that allows for the modification of the private frame of ID3 tags within AAC files. 
+
+It also has a small modification to the core library to stop the addition of ID3v1 and v2 tags to the end of a file that does not have one. The addition of a tag to the end of the file causes problems when trying to read the file using ffmpeg when the AAC file is part of a HLS stream.
+
 [![Join the chat at https://gitter.im/mono/taglib-sharp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mono/taglib-sharp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Linux Build Status](https://travis-ci.org/mono/taglib-sharp.svg?branch=master)](https://travis-ci.org/mono/taglib-sharp)

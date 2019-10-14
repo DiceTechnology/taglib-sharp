@@ -20,7 +20,7 @@ namespace AacTagModifier
 		public static void Main (string[] args)
 		{
 			if (args.Length != 2) {
-				Console.WriteLine ("There must be 2 command line arguments [file, timestampPts]. Only passed: " + args);
+				Console.WriteLine ("There must be 2 command line arguments [file, timestampPts]. Only passed: [" + string.Join (",", args) + "]");
 				return;
 			}
 
@@ -37,7 +37,7 @@ namespace AacTagModifier
 			var id3v2_tag = (TagLib.Id3v2.Tag)file.GetTag (TagTypes.Id3v2, true);
 
 			if (id3v2_tag != null) {
-				Console.WriteLine ("Updating private frame with timestamp: " + bytes);
+				Console.WriteLine ("Updating private frame with timestamp: [" + string.Join (",", bytes) + "]");
 				// Get the private frame, create if necessary.
 				PrivateFrame frame = PrivateFrame.Get (id3v2_tag, "com.apple.streaming.transportStreamTimestamp", true);
 				frame.PrivateData = bytes;

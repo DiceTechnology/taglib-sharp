@@ -637,7 +637,7 @@ namespace TagLib.Id3v2
 
 			if (!has_footer)
 				tag_data.Add (new ByteVector ((int)
-					((tag_data.Count < header.TagSize) ?
+					((tag_data.Count <= header.TagSize) ?
 					(header.TagSize - tag_data.Count) :
 					1024)));
 

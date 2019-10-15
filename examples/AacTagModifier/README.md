@@ -18,6 +18,8 @@ They are:
 Upload these files into a new version folder in S3. The base directory is `s3://dge-artifacts/technology/dice/std/cattle/taglib-sharp/`. 
 Check the latest version folder in there and increment by 1 (e.g. `/v1.0.5` -> `/v1.0.6`). Upload both files to this directory.
 
+		aws s3 cp --recursive examples/AacTagModifier/bin/Debug/net45/ s3://dge-artifacts/technology/dice/std/cattle/taglib-sharp/{VERSION}/
+
 ## Run the application locally
 To run the application use the following command:
 

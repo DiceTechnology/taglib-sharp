@@ -42,6 +42,7 @@ namespace AacTagModifier
 				PrivateFrame frame = PrivateFrame.Get (id3v2_tag, "com.apple.streaming.transportStreamTimestamp", true);
 				frame.PrivateData = bytes;
 				file.Save ();
+				Console.WriteLine ("Updated ID3 tag of file: " + fileLocation);
 			}
 		}
 	}
